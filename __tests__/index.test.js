@@ -26,13 +26,6 @@ describe("isValid()", () => {
     const expected = false;
     expect(actual).toEqual(expected);
   });
-
-  test("should account for `NaN` as a non-number", () => {
-    const rolls = [3, 2, NaN, 3, 6];
-    const actual = isValid(rolls);
-    const expected = false;
-    expect(actual).toEqual(expected);
-  });
 });
 
 describe("findValue()", () => {
