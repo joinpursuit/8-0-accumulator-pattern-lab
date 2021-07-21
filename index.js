@@ -57,6 +57,17 @@ function filterOutLowValues(rolls, lowest) {
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
 function getRollCounts(rolls) {
+
+  // This is my version 2 of solution
+  let obj = {};
+  for(roll of rolls) {
+    if(obj[roll]) obj[roll] += 1;
+    else obj[roll] = 1;
+  }
+  return obj;
+  
+  /*
+  // This is my version 1 solution
   let obj = {};
   for(let roll of rolls) {
     let curKey = obj[roll];
@@ -64,6 +75,7 @@ function getRollCounts(rolls) {
     obj[roll] = rollVal + 1;
   }
   return obj;
+  */
 }
 
 // Do not change the code below here.
