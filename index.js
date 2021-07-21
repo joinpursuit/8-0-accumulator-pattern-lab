@@ -3,7 +3,12 @@
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {boolean} Returns `true` if all values in the array are numbers. Otherwise, return `false`.
  */
-function isValid(rolls) {}
+function isValid(rolls) {
+  //create function that returns boolean value
+  const isTrue = (currentRoll) => typeof currentRoll === "number";
+  //iterate through array using every
+  return rolls.every(isTrue);
+}
 
 /**
  * Finds a value in an array. If that value is in the array, returns it. Otherwise, returns `null`.
@@ -11,7 +16,9 @@ function isValid(rolls) {}
  * @param {number} value - A specific value to find.
  * @returns {*} - The found value or `null`.
  */
-function findValue(rolls, value) {}
+function findValue(rolls, value) {
+  return rolls.includes(value) ? value : null;
+}
 
 /**
  * Returns a new array from the `rolls` array with only values equal to or greater than the `lowest` value.
@@ -19,14 +26,34 @@ function findValue(rolls, value) {}
  * @param {number} lowest - A number that represents the lowest allowed value in the new array.
  * @returns {number[]} An array of all numbers that are equal to or higher than the `lowest` value.
  */
-function filterOutLowValues(rolls, lowest) {}
+function filterOutLowValues(rolls, lowest) {
+  //return filtered out values that are equal to higher than the lowest value after iterating through rolls
+  return rolls.filter((el) => el >= lowest);
+}
 
 /**
  * Returns an object which has rolls as keys and counts as values.
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
-function getRollCounts(rolls) {}
+function getRollCounts(rolls) {
+  //iterate through array using reduce method
+  return rolls.reduce((acc, cVal) => {
+    //initalize an empty object
+    //if currentValue is a key in the object already
+    if (acc[cVal]) {
+      //increment the count of accumulator at key by 1
+      acc[cVal]++;
+      //otherwise
+    } else {
+      //create key in accumulator and initialize it with value of 1
+      acc[cVal] = 1;
+    }
+    return acc;
+  }, {});
+}
+
+console.log(getRollCounts([2, 2, 3, 4, 3, 2]));
 
 // Do not change the code below here.
 module.exports = {
