@@ -47,3 +47,4 @@ npm run watch
 ```
 
 Follow the on-screen prompts to exit out of the constant runner.
+.
