@@ -52,13 +52,18 @@ function filterOutLowValues(rolls, lowest) {
  */
 function getRollCounts(rolls) {
   let result = {}
-  for (let i = 0; i < rolls.length; i++) {
-    if (!Object.keys(result).includes(`${rolls[i]}`)){
-      result[rolls[i]] = 0
-    }
-    result[rolls[i]] = result[rolls[i]] +1
-  }
-  return result
+//   for (let i = 0; i < rolls.length; i++) {
+//     if (!Object.keys(result).includes(`${rolls[i]}`)){//check for if key exists yet, and make sure includes checks for the string
+//       result[rolls[i]] = 0
+//     }
+//     result[rolls[i]] = result[rolls[i]] +1
+//   }
+//   return result
+// }
+for (let r of rolls) {
+  result[r] = (result[r] +1) || 1 //much cleaner way of assigning an initial number value to the key
+}
+return result
 }
 
 // Do not change the code below here.
