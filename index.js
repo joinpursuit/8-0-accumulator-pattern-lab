@@ -85,7 +85,7 @@ function getRollCounts(rolls) {
   for (let i = 0; i < rolls.length; i++) {
     // 3. Accumulate!
     let objKey = rolls[i]
-    let objValue = numObject[objKey]
+    
     if (numObject[objKey]) {
       numObject[objKey] += 1
     } else { 
