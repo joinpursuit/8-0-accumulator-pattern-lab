@@ -27,33 +27,20 @@ function isValid(rolls) {
  * @param {number} value - A specific value to find.
  * @returns {*} - The found value or `null`.
  */
-function findValue(rolls, value) {
-  //step 1
-  
-  //step 2
-//   //for(let i=0; i<rolls.length;i++){
-//     let rollsArr = rolls[i]
-//     if(rollsArr !== value || rollsArr===0){
-//       return null
-//     } else  {rollArr === value
-//       return value
-//     }
-
-//   }
-// }
-
-let valueFound = false;
-  if (rolls.length === 0){
-  return null;
-}
- for(let i = 0; i < rolls.length;i++){
+ function findValue(rolls, value) {
+  let finale = null;
+  // if(rolls.length === 0){
+  //   return null
+  // }
+  for(let i = 0; i < rolls.length;i++){
       let rollsInArr = rolls[i];
-      if(rollsInArr === value){
-        return value;
-      // }else if ( rollsInArr === 0){
-      //   return null;
-      }
-  }
+      if ( rollsInArr === value ){
+        finale = value;
+      }//else {
+      // //   finale = null;
+      // // }
+ }
+  return finale;
 }
 
 /**
@@ -68,16 +55,15 @@ function filterOutLowValues(rolls, lowest) {
   //   ✕ should filter for values equal to the lowest value as well
   //   ✕ should include all values if needed
   //   ✕ should exclude all values if needed (1 ms)
-  if(rolls.length === 0){
-    return []
-  }
-  for(let i=0;i<rolls.length; i++){
-    let rollArr = rolls[i]
-    //if(rollArr >=)
-
-  }
-
   
+  let newArr =[];
+  for(let i =0 ; i < rolls.length;i++){
+      let newRoll = rolls[i];
+      if(newRoll >= lowest){
+        newArr.push(newRoll)
+      }
+  }
+  return newArr;
 }
 
 /**
@@ -86,10 +72,16 @@ function filterOutLowValues(rolls, lowest) {
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
 function getRollCounts(rolls) {
-  if(rolls.length === 0){
-    return {}
-    
+  let obj = {};
+  for(let i =0; i < rolls.length;i++){
+    let el = rolls[i];
+  if(!obj[el]){
+    obj[el] = 1;
+  }else {
+    obj[el] += 1;
   }
+  }
+return obj;
 }
 
 // Do not change the code below here.
