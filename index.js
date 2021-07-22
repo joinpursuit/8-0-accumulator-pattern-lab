@@ -58,7 +58,7 @@
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
-f function getRollCounts(rolls) {
+ function getRollCounts(rolls) {
   let countObj = {};
   rolls.forEach(key=>{
   countObj[key] = ++countObj[key] || 1;
