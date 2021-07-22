@@ -76,9 +76,9 @@ function filterOutLowValues(rolls, lowest) {
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
 function getRollCounts(rolls) {
-  // 1. Default Value and Output 
+ // 1. Default Value and Output 
   let numObject = {}
-  if (rolls == null) {
+  if (rolls === undefined) {
     numObject
   } else 
   // 2. Define the loop
@@ -97,6 +97,29 @@ function getRollCounts(rolls) {
   
 }
 
+
+
+// let count = {};//new obj
+// for(i = 0; i < rolls.length; i++){ //loop de loop//
+// let num = rolls[i]; //index var//
+// if(count[num] === undefined) { //use [] to make a key in an obj | number already exists in obj
+// count[num] = 1; // 1 is the first dice roll, creates key and value at the same time//
+// } else {
+// count[num] += 1; //incrementing the number of dice rolls by 1//
+// }
+// }
+// return count; //returns object//
+// }
+  
+
+
+// Simplest Method - once it encounters another instance of the number, it’ll add it. Otherwise, it has just seen it once.
+// let obj = {}
+// for(let roll of rolls) {
+//   obj[roll] = (obj[roll] + 1) || 1;
+// }
+// return obj
+// }
 
 
 getRollCounts();
