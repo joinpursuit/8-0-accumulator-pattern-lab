@@ -27,20 +27,19 @@ function isValid(rolls) {
  * @returns {*} - The found value or `null`.
  */
 function findValue(rolls, value) {
-  // let valueFound = false;
-  if (rolls.length === 0){
-  return null;
-}
+  let finale = null;
+  // if(rolls.length === 0){
+  //   return null
+  // }
   for(let i = 0; i < rolls.length;i++){
       let rollsInArr = rolls[i];
-      if(rollsInArr === value){
-        return value;
-      // }else if ( rollsInArr === null){
-      //   return null;
-      }
-   
-  }
-  
+      if ( rollsInArr === value ){
+        finale = value;
+      }//else {
+      // //   finale = null;
+      // // }
+ }
+  return finale;
 }
 
 
@@ -52,16 +51,15 @@ function findValue(rolls, value) {
  */
 function filterOutLowValues(rolls, lowest) {
 let newArr =[];
-if (rolls.length === 0){
-  return [];
-}
-  for(let i =0 ; i >= rolls.length;i++){
+
+  for(let i =0 ; i < rolls.length;i++){
       let newRoll = rolls[i];
       if(newRoll >= lowest){
-
+        newArr.push(newRoll)
       }
       
   }
+  return newArr;
 }
 // console.log(newArr)
 // returns newArr;
@@ -70,11 +68,21 @@ if (rolls.length === 0){
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
+
+// let dice = [1,2,3,3];
 function getRollCounts(rolls) {
-  if (rolls.length === 0){
-    return {};
+  let obj = {};
+
+  for(let i =0; i < rolls.length;i++){
+    let el = rolls[i];
+  if(!obj[el]){
+    obj[el] = 1;
+  }else {
+    obj[el] += 1;
+  }
+  }
   
-}
+return obj;
 }
 // Do not change the code below here.
 module.exports = {
