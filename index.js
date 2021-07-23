@@ -28,8 +28,6 @@ function isValid(rolls) {
 //looking for a specific value in the roll of dice
 //if the value is not incuded in the roll, the result will be null
 
-let rolls = [3, "three"];
-let value = 6;
 
 function findValue(rolls, value) {
   let goosebumps = null;
@@ -41,7 +39,6 @@ function findValue(rolls, value) {
     return goosebumps;
 }
 
-findValue(rolls, value);
 /**
  * Returns a new array from the `rolls` array with only values equal to or greater than the `lowest` value.
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
@@ -71,18 +68,20 @@ return arr
 // turn number amount of time it shows up into = values - count (1)
 // result is an object {2: 1}
 // add the count of rolls into the object?
+let rolls = [3,5,6,]
+
 function getRollCounts(rolls) {
-  let countOfRolls = rolls.reduce(function (allNumbers, roll) {
-    if (roll in allNumbers) {
-    allNumbers[roll]++
-    }     
-    else {
-    allNumbers[roll] = 1
-    }
-  return allNumbers;
-    }, {})
-return countOfRolls;
+ let anObject = {};
+    for (i = 0; i < rolls.length; i++) {
+      if (anObject[rolls[i]]) {
+        anObject[rolls[i]] += 1;
+    } else {
+        anObject[rolls[i]] =1
+      } 
+    } 
+  return anObject; 
 }
+
 
   
 
