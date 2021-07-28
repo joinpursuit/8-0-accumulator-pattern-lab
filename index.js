@@ -4,17 +4,19 @@
  * @returns {boolean} Returns `true` if all values in the array are numbers. Otherwise, return `false`.
  */
 
-const rolls = [1, 2, 3, 4, 5, 6];
+ const rolls = [2, 2, 3, 4, 3, 2];;
 
 function isValid(rolls) {
   let isNumber = true;
+
     for (let i=0; i< rolls.length;i++){
-      let array = rolls[i];
-      if (array === NaN){
+      let roll = rolls[i];
+
+      if (isNaN(roll)){
         isNumber = false;
-      } else if (array === []){
+      } else if (typeof (roll) === "number") {
         isNumber = true;
-      } 
+      }
 
     }
     return isNumber;
@@ -30,22 +32,17 @@ isValid(rolls)
 
 
 function findValue(rolls, value) {
-  let valueNumber = 0
+    let answer = null;
+
     for (let i = 0; i < rolls.length; i++){
-      
-      let array = rolls[i];
-      if (array === [] || array !== value){
-        valueNumber = null;
+       if (rolls.includes(value)){
+        answer = value;
+      } 
 
-      } else if (array === value){
+    } 
+    return answer;
 
-        valueNumber = value;
-      }
-
-    }
-
-    return valueNumber
-}
+  }
 
 findValue(rolls,4)
 
@@ -82,14 +79,19 @@ filterOutLowValues(rolls, 2)
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
-function getRollCounts(rolls) {
 
+ //const rolls = [2, 2, 3, 4, 3, 2];
+function getRollCounts(array) {
       let newObject = {};
-      for (let i = 0 ; i < rolls.length; i++){
-        let keys = rolls[i];
-        newObject += newObject.key; // trying to add key values = rolls[i] / keys variable into the object 
 
-      }
+      for (let i = 0 ; i < array.length; i++){
+        if (!newObject[array[i]]){
+          newObject[array[i]] = 1;
+        } else {
+          newObject[array[i]] += 1;
+        }
+           
+      } 
       return newObject;
 }
 
