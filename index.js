@@ -68,18 +68,17 @@ return arr
 // turn number amount of time it shows up into = values - count (1)
 // result is an object {2: 1}
 // add the count of rolls into the object?
-let rolls = [3,5,6,]
 
 function getRollCounts(rolls) {
- let anObject = {};
-    for (i = 0; i < rolls.length; i++) {
-      if (anObject[rolls[i]]) {
-        anObject[rolls[i]] += 1;
-    } else {
-        anObject[rolls[i]] =1
-      } 
-    } 
-  return anObject; 
+  let countRollObject = {}
+  for (const eachRoll of rolls) {
+  if (countRollObject[eachRoll]) {
+      countRollObject[eachRoll] += 1
+  } else {
+    countRollObject[eachRoll] = 1
+  }
+}
+return countRollObject;
 }
 
 
