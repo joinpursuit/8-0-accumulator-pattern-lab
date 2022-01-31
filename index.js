@@ -3,7 +3,18 @@
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {boolean} Returns `true` if all values in the array are numbers. Otherwise, return `false`.
  */
-function isValid(rolls) {}
+function isValid(rolls) {
+  let allNumbers = true;
+
+  for (let i = 0; i < rolls.length; i++) {
+    let roll = rolls[i];
+
+    if(isNaN(roll)) {
+      return false;
+    }
+  }
+  return allNumbers;
+}
 
 /**
  * Finds a value in an array. If that value is in the array, returns it. Otherwise, returns `null`.
@@ -11,7 +22,17 @@ function isValid(rolls) {}
  * @param {number} value - A specific value to find.
  * @returns {*} - The found value or `null`.
  */
-function findValue(rolls, value) {}
+function findValue(rolls, value) {
+  //let rolls = [];
+  //for (let i = 0; i < rolls.length; i++)  { 
+
+    if (rolls.includes(value)) {
+      return value;
+    } else {
+      return null;
+    }
+  //}
+}
 
 /**
  * Returns a new array from the `rolls` array with only values equal to or greater than the `lowest` value.
