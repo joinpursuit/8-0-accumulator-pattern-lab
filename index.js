@@ -49,16 +49,15 @@ function filterOutLowValues(rolls, lowest) {
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
 function getRollCounts(rolls) {
-  let obj = {};
-  for(let roll of rolls){
-    obj[roll] = 0;
+  let newObject = {};
+  for(let roll of rolls) {
+    if (newObject[roll]) {
+      newObject[roll] += 1;
+    }
+    else newObject[roll] = 1;
   }
-  for(let roll of rolls){
-    obj[roll] += 1;
-  }
-  return obj;
+  return newObject;
 }
-
 
 // Do not change the code below here.
 module.exports = {
