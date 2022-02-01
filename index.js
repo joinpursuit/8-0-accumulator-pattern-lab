@@ -21,7 +21,15 @@ return true
  * @param {number} value - A specific value to find.
  * @returns {*} - The found value or `null`.
  */
-function findValue(rolls, value) {}
+function findValue(rolls, value) {
+  //wirte for loop to iterate
+for (let roll of rolls){
+if (rolls.includes(value)){
+return value
+}else {return null}
+}
+return null
+}
 
 /**
  * Returns a new array from the `rolls` array with only values equal to or greater than the `lowest` value.
