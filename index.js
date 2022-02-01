@@ -59,6 +59,10 @@ console.log(findValue([], 6));
  */
 function filterOutLowValues(rolls, lowest) {
   let rollsGreaterThanLowest = [];
+  
+  if (rolls.length === 0) {
+    return rollsGreaterThanLowest;
+  }
 
   for (let roll of rolls) {
     if (roll < lowest) {
@@ -77,7 +81,7 @@ console.log("Test case for when: Rolls = [2, 5, 1, 1, 3, 6] &  Lowest is 6");
 console.log(filterOutLowValues([2, 5, 1, 1, 3, 6], 6));
 console.log("Test case for when: Rolls = [2, 5, 1, 1, 3, 6] &  Lowest is 1");
 console.log(filterOutLowValues([2, 5, 1, 1, 3, 6], 1));
-console.log("Test case for empty array: Rolls = []");
+console.log("Test case for empty rolls array:");
 console.log(filterOutLowValues([], 2));
 
 /**
@@ -86,36 +90,25 @@ console.log(filterOutLowValues([], 2));
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
 function getRollCounts(rolls) {
-  if (rolls.length === 0) {
-    return null
-  }
-
-  let rollNumberFrequencyObject = {};
+ 
+  let rollNumberFrequency = {};
 
   for (let roll of rolls) {
-    rollNumberFrequencyObject[roll] = 0  
-  }
-  console.log(rollNumberFrequencyObject);
-
-  let rollFrequencyCounter = 0;
-  for (let i = 1; i <=6; ++i) {
-    for (let roll of rolls) {
-      if (roll === i) {
-        rollFrequencyCounter += 1;
-      }
-      rollNumberFrequencyObject[i] = rollFrequencyCounter;
+    if (rollNumberFrequency[roll]) {
+      rollNumberFrequency[roll] += 1;
+    } else {
+      rollNumberFrequency[roll] = 1;
     }
-    console.log(`The frequency of ${i} is ${rollFrequencyCounter}`);
   }
+
+  return rollNumberFrequency;
 }
 
-// return rollNumberFrequencyObject;
-
 // Test Cases
-console.log("Test case for empty rolls array:")
+console.log("Test case for empty rolls array:");
 console.log(getRollCounts([]));
-console.log("Test case for rolls array: [2, 5, 6, 2, 4, 2, 3, 2, 1, 4, 5, 5, 5]");
-console.log(getRollCounts([2, 5, 6, 2, 4, 2, 3, 2, 1, 4, 5, 5, 5]));
+console.log("Test case for rolls array: [2, 5, 2, 4, 2, 3, 2, 1, 4, 5, 5, 5]");
+console.log(getRollCounts([2, 5, 2, 4, 2, 3, 2, 1, 4, 5, 5, 5]));
 
 // Do not change the code below here.
 module.exports = {
