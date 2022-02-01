@@ -4,7 +4,7 @@
  * @returns {boolean} Returns `true` if all values in the array are numbers. Otherwise, return `false`.
  */
 function isValid(rolls) {
-  let rolls = true;
+  let roll = true;
   for (elm of rolls){
     if (typeof elm !== 'number'){
       roll = false;
