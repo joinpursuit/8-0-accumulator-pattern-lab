@@ -60,22 +60,40 @@ console.log(isValid(rolls));
 function findValue(rolls, value) {
   return (rolls.includes(value)) ? value : null;
 }
-//no need for a for loop here!
+//no need for a for a loopy here!//
 /**
  * Returns a new array from the `rolls` array with only values equal to or greater than the `lowest` value.
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @param {number} lowest - A number that represents the lowest allowed value in the new array.
  * @returns {number[]} An array of all numbers that are equal to or higher than the `lowest` value.
  */
-function filterOutLowValues(rolls, lowest) {}
-
+function filterOutLowValues(rolls, lowest){
+ arrRolls = []
+ for (let i = 0;i < rolls.length;i++){
+  if(rolls[i] >= lowest) {
+ arrRolls.push(rolls[i])
+   }
+ }
+ return arrRolls;
+ }
+ //
+//empty array is availble in order to push new and/or any values//
+//inital/conditon/increase or decrease .. for the loop to continue or not//
+//
 /**
  * Returns an object which has rolls as keys and counts as values.
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
-function getRollCounts(rolls) {}
-
+function getRollCounts(rolls){
+    let rollsObj = {
+    }
+    for(let roll of rolls) {
+      rollsObj[roll] = rolls.filter(x => x == roll).length;
+    }
+    return rollsObj;
+  }
+// .filter() makes a new array with all elements that pass the test implemented by the provided function
 // Do not change the code below here.
 module.exports = {
   isValid,
