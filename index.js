@@ -44,7 +44,19 @@ function filterOutLowValues(rolls, lowest) {}
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
-function getRollCounts(rolls) {}
+function getRollCounts(rolls) {
+  //create word count obj
+  let wordCount = {};
+  for (let roll of rolls){
+    if (wordCount[roll]){
+      wordCount[roll] += 1;
+    }else {
+      wordCount[roll] = 1
+  }
+  
+}
+return wordCount
+}
 
 // Do not change the code below here.
 module.exports = {
