@@ -9,7 +9,7 @@ function isValid(rolls) {
   for (let roll of rolls) {
     if (typeof(roll) !== "number" ) {
       bool = false;
-    } else if (rolls.length === 0 || typeof(roll) !== "number") {
+    } else if (rolls.length === 0) {
       bool = true;
     }
   }
@@ -91,17 +91,17 @@ console.log(filterOutLowValues([], 2));
  */
 function getRollCounts(rolls) {
  
-  let rollNumberFrequency = {};
+  let rollNumberFrequency = {}; // Creates empty object which will be the default value to return
 
-  for (let roll of rolls) {
+  for (let roll of rolls) { // Iterates through original array
     if (rollNumberFrequency[roll]) {
-      rollNumberFrequency[roll] += 1;
+      rollNumberFrequency[roll] += 1; // Second: Adds +1 value to the specific roll number everytime a roll number is encounterd in the rolls array
     } else {
-      rollNumberFrequency[roll] = 1;
+      rollNumberFrequency[roll] = 1; // First: The loop creates a property for each roll in the rolls array
     }
   }
 
-  return rollNumberFrequency;
+  return rollNumberFrequency; // Returns object with key: value pairs describing each roll and its frequency in the original array
 }
 
 // Test Cases
@@ -109,6 +109,42 @@ console.log("Test case for empty rolls array:");
 console.log(getRollCounts([]));
 console.log("Test case for rolls array: [2, 5, 2, 4, 2, 3, 2, 1, 4, 5, 5, 5]");
 console.log(getRollCounts([2, 5, 2, 4, 2, 3, 2, 1, 4, 5, 5, 5]));
+
+
+
+// Refactoring Previous Function so that it includes key value of 0 for numbers that have not been rolled
+
+function getRollCounts2(rolls) {
+ 
+  let rollNumberFrequency2 = {};
+
+  if (rolls.length === 0) {
+    return rollNumberFrequency2; // Returns empty object as default value if original rolls array is empty
+  }
+
+  for (let i = 1; i <= 6; ++i) {
+    rollNumberFrequency2[i] = 0; // Creates properties for each possible dice roll in object in order to include key: value pairs for numbers that were not rolled (roll: 0)
+  }
+  
+  for (let i = 0; i < rolls.length; ++i) { // Tterates the same way as the previous function but using a regular for loop
+
+    if (rollNumberFrequency2[rolls[i]]) {
+      rollNumberFrequency2[rolls[i]] += 1;
+      
+    } 
+    else {
+      rollNumberFrequency2[rolls[i]] = 1; 
+    }
+  }
+  
+  return rollNumberFrequency2;
+}
+
+// Test Cases
+console.log("Test case for empty rolls array:");
+console.log(getRollCounts2([]));
+console.log("Test case for rolls array: [2, 5, 2, 4, 2, 3, 2, 1, 4, 5, 5, 5]");
+console.log(getRollCounts2([2, 5, 2, 4, 2, 3, 2, 1, 4, 5, 5, 5]));
 
 // Do not change the code below here.
 module.exports = {
