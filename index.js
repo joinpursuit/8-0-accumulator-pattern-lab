@@ -57,11 +57,11 @@ function filterOutLowValues(rolls, lowest) {
 
 function getRollCounts(rolls) {
   let rollsObject = {}
-    for (let i of rolls){
-      if (rollsObject[i]){
-        rollsObject[i] += 1;
+    for (let element of rolls){
+      if (rollsObject[element]){
+        rollsObject[element] += 1;
       } else {
-        rollsObject[i] = 1;
+        rollsObject[element] = 1;
       }
 
     }
@@ -72,6 +72,11 @@ function getRollCounts(rolls) {
 // else if insert as {num: 1} DOES NOT REPEAT IN THE ARRAY
 // else return EMPTY object if original array is also empty. 
 // Do not change the code below here.
+
+//update: found solution, solved similar problem in class
+//// Questions... where in the code are "pushing" the array numbers into the obect...?   
+// I understand that we are incrementing by one, but the IF statement has no > < or === .... what is it checking for? 
+// will have to ask in class
 module.exports = {
   isValid,
   findValue,
