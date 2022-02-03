@@ -3,7 +3,16 @@
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {boolean} Returns `true` if all values in the array are numbers. Otherwise, return `false`.
  */
-function isValid(rolls) {}
+ function isValid(rolls) {
+  let allNumbers = true;
+  for (let i = 0; i < rolls.length; i++) {
+    if (typeof rolls[i] !== "number") {
+      allNumbers = false;
+      break
+    }
+  }
+  return allNumbers; //if all are number return true;
+}
 
 /**
  * Finds a value in an array. If that value is in the array, returns it. Otherwise, returns `null`.
@@ -11,7 +20,18 @@ function isValid(rolls) {}
  * @param {number} value - A specific value to find.
  * @returns {*} - The found value or `null`.
  */
-function findValue(rolls, value) {}
+function findValue(rolls, value) {
+  let valueInArray = null;
+
+  for (let i = 0; i < rolls.length; i++) {
+    if (rolls[i] === value) {
+      valueInArray = value;
+      break;
+    }
+  }
+
+  return valueInArray;
+}
 
 /**
  * Returns a new array from the `rolls` array with only values equal to or greater than the `lowest` value.
@@ -19,14 +39,45 @@ function findValue(rolls, value) {}
  * @param {number} lowest - A number that represents the lowest allowed value in the new array.
  * @returns {number[]} An array of all numbers that are equal to or higher than the `lowest` value.
  */
-function filterOutLowValues(rolls, lowest) {}
+function filterOutLowValues(rolls, lowest) {
+  let equalToOrGreaterThan = [];
+
+  for (let i = 0; i < rolls.length; i++) {
+    if (rolls[i] >= lowest) {
+      equalToOrGreaterThan.push(rolls[i]);
+    }
+  }
+
+  return equalToOrGreaterThan;
+}
 
 /**
  * Returns an object which has rolls as keys and counts as values.
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
+ * rolls = [2, 3, 4]; =>  2: 1, 3: 1, 4: 1 };
+ * rolls = [2, 2, 3, 4, 3, 2]; => { 2: 3, 3: 2, 4: 1 };
+ * obj["key3"] = "value3";
  */
-function getRollCounts(rolls) {}
+//  let adb = {key5 : value5, key1 : value1, key3 : value3};
+//  console.log(adb);
+function getRollCounts(rolls) {
+  let newRollsObj = {};
+  
+  
+
+  for (let i = 0; i < rolls.length; i++) {
+    //going through the rolls array
+    if (newRollsObj[rolls[i]]){
+      newRollsObj[rolls[i]]++;
+    } else {
+      newRollsObj[rolls[i]] = 1;
+    }
+    
+    
+  }
+  return newRollsObj;
+}
 
 // Do not change the code below here.
 module.exports = {
