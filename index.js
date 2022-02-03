@@ -36,6 +36,7 @@ function findValue(rolls, value) {
  * @param {number} lowest - A number that represents the lowest allowed value in the new array.
  * @returns {number[]} An array of all numbers that are equal to or higher than the `lowest` value.
  */
+
 function filterOutLowValues(rolls, lowest) {
   let higherValues = [];
 
@@ -52,9 +53,19 @@ function filterOutLowValues(rolls, lowest) {
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
-function getRollCounts(rolls) {
 
+function getRollCounts(rolls) {
+  let amountRolled = {};
+
+  for (let i = 0; i < rolls.length; i++) {
+      if (amountRolled[rolls[i]]) {
+        amountRolled[rolls[i]] += 1;
+      } else {
+        amountRolled[rolls[i]] = 1;
+      }
+  }
   
+  return amountRolled;
 }
 
 // Do not change the code below here.
