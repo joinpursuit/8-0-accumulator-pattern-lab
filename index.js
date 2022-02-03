@@ -55,17 +55,11 @@ function filterOutLowValues(rolls, lowest) {
  * Returns an object which has rolls as keys and counts as values.
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
- * rolls = [2, 3, 4]; =>  2: 1, 3: 1, 4: 1 };
- * rolls = [2, 2, 3, 4, 3, 2]; => { 2: 3, 3: 2, 4: 1 };
- * obj["key3"] = "value3";
- */
-//  let adb = {key5 : value5, key1 : value1, key3 : value3};
-//  console.log(adb);
+**/
+
 function getRollCounts(rolls) {
   let newRollsObj = {};
   
-  
-
   for (let i = 0; i < rolls.length; i++) {
     //going through the rolls array
     if (newRollsObj[rolls[i]]){
@@ -73,8 +67,6 @@ function getRollCounts(rolls) {
     } else {
       newRollsObj[rolls[i]] = 1;
     }
-    
-    
   }
   return newRollsObj;
 }
