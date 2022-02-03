@@ -9,9 +9,6 @@ function isValid(rolls) {
     if (typeof rolls[i] !== "number") {
       allValueAreNumber = false; //broken not working
     }
-    if (rolls.length === 0) {
-      allValueAreNumber = true;
-    }
   }
   return allValueAreNumber; //if all are number return true;
 }
@@ -67,6 +64,7 @@ function getRollCounts(rolls) {
   for (let i = 0; i < rolls.length; i++) {
     //going through the rolls array
     if (newObj[rolls[i]]){
+      //console.log(newObj[rolls[i]]);
       newObj[rolls[i]]++;
     } else {
       newObj[rolls[i]] = 1;
