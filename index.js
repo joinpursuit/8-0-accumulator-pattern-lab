@@ -43,10 +43,11 @@ function filterOutLowValues(rolls, lowest) {
     return ofTheMack; //the payoff
 }
 
-/**
+/*
  * Returns an object which has rolls as keys and counts as values.
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
- * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
+ * @returns {object} An object where the keys are numbers rolled and the values are the number of times that
+ * roll appears in the `rolls` array.
  */
 function getRollCounts(rolls) {
   let dasObject = {};
@@ -68,6 +69,20 @@ function getRollCounts(rolls) {
     dasObject[number] = count;
   }
   return dasObject;
+
+  /* Alternative method using the 'in' operator :
+  function getRollCounts(rolls) {
+  let rollCount = {};
+  for(let roll of rolls){
+    if(roll in rollCount){
+      rollCount[roll]++;
+    }else{
+      rollCount[roll] = 1;
+    }
+  }
+  return rollCount;
+}
+*/
 }
 
 // Do not change the code below here.
