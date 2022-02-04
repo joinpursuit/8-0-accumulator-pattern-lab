@@ -1,8 +1,9 @@
 /**
- * Returns a boolean representing whether or not all values are numbers.
- * @param {number[]} rolls - An array of numbers representing rolls on a die.
- * @returns {boolean} Returns `true` if all values in the array are numbers. Otherwise, return `false`.
- */
+* Returns a boolean representing whether or not all values are numbers.
+ * @param {number[]} - An array of numbers representing rolls on a die.
+ * @returns {boolean} Returns `true` if all values in the array are numbers. Otherwise, return `false`. 
+*/
+
 function isValid(rolls) {
   for (let number of rolls) {
     if (typeof number != "number") {
@@ -18,6 +19,7 @@ function isValid(rolls) {
  * @param {number} value - A specific value to find.
  * @returns {*} - The found value or `null`.
  */
+
 function findValue(rolls, value) {
   for (let roll of rolls) {
     if (roll === value) {
@@ -33,36 +35,38 @@ function findValue(rolls, value) {
  * @param {number} lowest - A number that represents the lowest allowed value in the new array.
  * @returns {number[]} An array of all numbers that are equal to or higher than the `lowest` value.
  */
+
 function filterOutLowValues(rolls, lowest) {
   let ofTheMack = []; //the array to be returned
-    for (let roll of rolls){
-      if (roll >= lowest){
-        ofTheMack.push(roll);
-      }
+  for (let roll of rolls) {
+    if (roll >= lowest) {
+      ofTheMack.push(roll);
     }
-    return ofTheMack; //the payoff
+  }
+  return ofTheMack; //the payoff
 }
 
-/*
+/**
  * Returns an object which has rolls as keys and counts as values.
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that
  * roll appears in the `rolls` array.
  */
+
 function getRollCounts(rolls) {
   let dasObject = {};
   let uniqueNums = [];
 
-  for (let roll of rolls){
-    if (!uniqueNums.includes(roll)){
+  for (let roll of rolls) {
+    if (!uniqueNums.includes(roll)) {
       uniqueNums.push(roll);
     }
   }
 
-  for (let number of uniqueNums){
+  for (let number of uniqueNums) {
     let count = 0;
-    for (let roll of rolls){
-      if (roll == number){
+    for (let roll of rolls) {
+      if (roll == number) {
         count++;
       }
     }
@@ -92,3 +96,7 @@ module.exports = {
   filterOutLowValues,
   getRollCounts,
 };
+
+console.log(
+  getRollCounts([4, 5, 6, 7, 2, 6, 2, 6, 78, 98, 3, 2, 6, 5, 2, 6, 3])
+);
