@@ -54,14 +54,8 @@ function getRollCounts(rolls) {
   let obj = {}
   let count = 1
   for(const num of rolls){
-    if([num] in obj === false){
-      obj[num] = count 
+    [num] in obj === false ? obj[num] = count : obj[num] += count
     }
-    else{
-      obj[num] += count
-    }
-    
-  }
   return obj
 }
 
