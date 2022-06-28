@@ -34,7 +34,15 @@ function findValue(rolls, value) {
  * @param {number} lowest - A number that represents the lowest allowed value in the new array.
  * @returns {number[]} An array of all numbers that are equal to or higher than the `lowest` value.
  */
-function filterOutLowValues(rolls, lowest) {}
+function filterOutLowValues(rolls, lowest) {
+  let newArr = [];
+  for (let roll of rolls) {
+    if (roll >= lowest) {
+      newArr.push(roll);
+    }
+  }
+  return newArr;
+}
 
 /**
  * Returns an object which has rolls as keys and counts as values.
