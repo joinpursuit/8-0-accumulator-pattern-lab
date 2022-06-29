@@ -44,18 +44,16 @@ return null
  * @returns {number[]} An array of all numbers that are equal to or higher than the `lowest` value.
  */
 function filterOutLowValues(rolls, lowest) {
-  if(rolls.length === 0){
+   let accumlator = []
+   if(rolls.length === 0){
     return []
+   }
+   for(let i = 0; i < rolls.length; i++){
+    if(rolls[i] >= lowest )
+    accumlator.push(rolls[i])
+   }
+   return accumlator  
   }
-  for(let i = 0; i < rolls.length; i++){
-    let accumlator = rolls[0]
-      if(Math.min(rolls[i]) < accumlator){
-        accumlator = rolls[i]
-        rolls.splice(accumlator , 1)
-        return rolls
-      }
-    }
-}
 
 /**
  * Returns an object which has rolls as keys and counts as values.
