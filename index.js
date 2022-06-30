@@ -64,6 +64,34 @@ function getRollCounts(rolls) {
 // Determine your output data type and default value.  = object, default = empty
 // Define your loop.
 // Accumulate!
+
+let accumulator = {}
+
+//guard clause  - throw an error for what can go wrong
+// if(typeof roll !== "number "){
+//    return "roll must be a number"
+// }
+
+
+// iterate over the array
+for(let i = 0; i < rolls.length; i++){
+
+    //create a variable to hold each die value as the loop iterates
+      const roll = rolls[i]
+
+      //if the number does not exist in our accumulator, we will add it
+      if(!accumulator[roll]){
+       
+     
+        accumulator[roll] = 1
+      } else {
+        //   //if the number exists, increase accumulator by 1
+        accumulator[roll] +=1
+      }
+
+}
+
+return accumulator
 }
 
 // Do not change the code below here.
