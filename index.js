@@ -24,17 +24,17 @@ for (const roll of rolls) {
  * @returns {*} - The found value or `null`.
  */
 function findValue(rolls, value) {
-//   let accumulator = null
+  let accumulator = null
 
-// //logic
-//     for (const roll of rolls) {
-//       if (value === roll) {
-//         accumulator = value
-//       }
-//     }
+//logic
+    for (const roll of rolls) {
+      if (value === roll) {
+        accumulator = value
+      }
+    }
 
 
-//   return accumulator;
+  return accumulator;
 }
 
 /**
