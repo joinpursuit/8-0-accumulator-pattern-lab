@@ -6,15 +6,10 @@
 function isValid(rolls) {
  let number = true
   //setting up a default boolean
-  for (let i = 0; i < rolls.length; i++) {
-    //regular for loop exchanged array for rolls because thats the parameter. 
+  for (let i = 0; i < rolls.length; i++) { 
     const element = rolls[i];
-    // I made element rolls[i] 
-
     if(typeof element === "number"){
-      //asking me if this is a boolean aka True/False
       number 
-      // returning the let 
     }else{
       number = false
     } 
