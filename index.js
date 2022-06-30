@@ -30,7 +30,24 @@ function isValid(rolls) {
  * @param {number} value - A specific value to find.
  * @returns {*} - The found value or `null`.
  */
-function findValue(rolls, value) {}
+function findValue(rolls, value) {
+  // intialized accumulator
+  let accumulator = null
+
+  // guard clause 
+   if (rolls.length === 0) {
+      accumulator = null
+   }
+
+  // logic here
+   for (let r of rolls) {
+    if (r === value) {
+      accumulator = r
+    }
+   }
+
+  return accumulator
+}
 
 /**
  * Returns a new array from the `rolls` array with only values equal to or greater than the `lowest` value.
