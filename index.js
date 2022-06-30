@@ -5,7 +5,6 @@
  */
 function isValid(rolls) {
  let number = true
-  //setting up a default boolean
   for (let i = 0; i < rolls.length; i++) { 
     const element = rolls[i];
     if(typeof element === "number"){
