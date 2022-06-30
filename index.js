@@ -45,14 +45,14 @@ function findValue(rolls, value) {
  * @returns {number[]} An array of all numbers that are equal to or higher than the `lowest` value.
  */
 function filterOutLowValues(rolls, lowest) {
-  // let result = []
-  // for (let i = 0; i < rolls.length; i++) {
-  //   if(rolls[i] >= lowest){
-  //     result.push(rolls[i])
-  //   }
+  let result = []
+  for (let i = 0; i < rolls.length; i++) {
+    if(rolls[i] >= lowest){
+      result.push(rolls[i])
+    }
     
-  // }
-  // return result 
+  }
+  return result 
 }
 
 /**
