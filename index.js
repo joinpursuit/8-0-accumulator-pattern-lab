@@ -61,13 +61,13 @@ return accumulator
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
-// function getRollCounts(rolls) {
-//   let accumulator = {}
-//   for (const roll of rolls) {
-//    accumulator[roll] = ++accumulator[roll] || 1 
-//   }
-//   return accumulator
-// }
+function getRollCounts(rolls) {
+  let accumulator = {}
+  for (const roll of rolls) {
+   accumulator[roll] = ++accumulator[roll] || 1 
+  }
+  return accumulator
+}
 
 // Do not change the code below here.
 module.exports = {
