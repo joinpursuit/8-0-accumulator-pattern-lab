@@ -23,7 +23,7 @@ function isValid(rolls) {
  */
 function findValue(rolls, value) {
   let accumulator = null
-for (let roll of rolls) {
+for (let roll of rolls){
   if(value === roll){
     accumulator = value
   } 
