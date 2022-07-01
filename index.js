@@ -54,7 +54,7 @@ return accumulator
  */
 function getRollCounts(rolls) {
   let accumulator = {}
-for (const roll of rolls) {
+for (const roll of rolls){
     accumulator[roll] = ++accumulator[roll] || 1
   }
   return accumulator
