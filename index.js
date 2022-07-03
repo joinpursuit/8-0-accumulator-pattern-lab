@@ -57,8 +57,27 @@ function filterOutLowValues(rolls, lowest) {
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
 function getRollCounts(rolls) {
+  let accumulator = {}
+  for (let i = 0; i < rolls.length; i++) {
+   
+    const rolls = rolls[i];
+    if (!accumulator[rolls]){
+      accumulator[rolls]=1
 
-}
+      }else{
+        accumulator[rolls]+=1
+      }
+
+
+    }
+    return accumulator
+  }
+
+
+
+
+
+
 
 // Do not change the code below here.
 module.exports = {
