@@ -45,7 +45,7 @@ function filterOutLowValues(rolls, lowest) {
 function getRollCounts(rolls) {
   let result = 0;
   for (let sum of numbers) {
-    result += rolls; 
+   
   }
   
 }
