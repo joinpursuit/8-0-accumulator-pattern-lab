@@ -59,19 +59,25 @@ function filterOutLowValues(rolls, lowest) {
 function getRollCounts(rolls) {
   let accumulator = {}
   for (let i = 0; i < rolls.length; i++) {
+ 
+ const roll = rolls[i];
+ if(!accumulator[roll]){
+  accumulator[roll]=1
+ }else{
+  accumulator[roll] +=1
+ }
+ 
+
+}
+ 
+return accumulator
+
+}
+
+
+    
+    
    
-    const rolls = rolls[i];
-    if (!accumulator[rolls]){
-      accumulator[rolls]=1
-
-      }else{
-        accumulator[rolls]+=1
-      }
-
-
-    }
-    return accumulator
-  }
 
 
 
