@@ -4,16 +4,13 @@
  * @returns {boolean} Returns `true` if all values in the array are numbers. Otherwise, return `false`.
  */
 function isValid(rolls) {
-  if(rolls.length === 0){
-    return true;
-  }
+  let roll = true;
   for (i = 0; i < rolls.length; i++){
-    if (typeof(rolls[i]) === "number"){
-    return true
-  } else {
-    return false
+    if (typeof(rolls[i]) !== "number"){
+    roll = false;
   }
 }
+return roll;
 }
 
 /**
@@ -57,7 +54,7 @@ function getRollCounts(rolls) {
 let obj = {};
 for(let roll of rolls){
   if(obj[roll]){
-  obj[roll] +=1;
+  obj[roll] += 1;
  } else {
   obj[roll] = 1;
  }
