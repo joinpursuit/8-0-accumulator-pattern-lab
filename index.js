@@ -44,11 +44,11 @@ function filterOutLowValues(rolls, lowest) {
 
   for(let roll of rolls){
     if(roll >= lowest){
-      filtered.push(roll)
+      filtered.push(roll);
     }
   }
 
-  return filtered
+  return filtered;
 }
 
 /**
@@ -56,7 +56,18 @@ function filterOutLowValues(rolls, lowest) {
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
-function getRollCounts(rolls) {}
+function getRollCounts(rolls) {
+  let rollObj = {};
+
+  for(let roll of rolls){
+    if(rollObj.hasOwnProperty(roll)){
+      rollObj[roll] ++;
+    } else {
+      rollObj[roll] = 1;
+    }
+  }
+  return rollObj;
+}
 
 // Do not change the code below here.
 module.exports = {
