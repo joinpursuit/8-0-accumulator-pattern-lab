@@ -57,9 +57,24 @@ function filterOutLowValues(rolls, lowest) {
 /**
  * Returns an object which has rolls as keys and counts as values.
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
- * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
+ * @returns {object} An object where the keys are numbers rolled 
+ * and the values are the number of times that roll appears in the `rolls` array.
  */
-function getRollCounts(rolls) {}
+function getRollCounts(rolls) {
+  let object = {}; // will return empty if no rolls are given
+  for (let i = 0; i < rolls.length; i++) {
+    let count = rolls[i]; // count is assigned to the number of times an element appears in array.
+    if (!object[count]) { //if number is not found again in rolls
+      object[count] = 1; // default count for each element in rolls is 1 b/c it is still in the array once.
+    } else { 
+      object[count]++; //will add +1 to count for duplicates in rolls
+    }
+  } return object;
+}
+//rolls= [1, 2, 3, 4, 5 ,6]
+//count = [1: 1, 2: 1, 3: 2...]
+//object: {rolls[i]: times rolled (count)}
+//console.log shows: { '2': 3, '3': 2, '4': 1 }
 
 // Do not change the code below here.
 module.exports = {
