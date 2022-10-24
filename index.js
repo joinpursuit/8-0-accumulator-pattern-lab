@@ -4,12 +4,19 @@
  * @returns {boolean} Returns `true` if all values in the array are numbers. Otherwise, return `false`.
  */
 function isValid(rolls) {
-  for (element of rolls) {
-    if (typeof element !== "number") {
-      return false
+  // for (element of rolls) {
+  //   if (typeof element !== "number") {
+  //     return false
+  //   }
+  // }
+  // return true
+  let state = true
+  for (i = 0; i < rolls.length; i++) {
+    if (typeof rolls[i] !== 'number') {
+      state = false
     }
   }
-  return true
+  return state
 }
 
 /**
@@ -19,12 +26,19 @@ function isValid(rolls) {
  * @returns {*} - The found value or `null`.
  */
 function findValue(rolls, value) {
-  for (element of rolls) {
-    if (element === value) {
-      return element
+  // for (element of rolls) {
+  //   if (element === value) {
+  //     return element
+  //   }
+  // }
+  // return null
+  let uValue = null
+  for (i = 0; i < rolls.length; i++) {
+    if (rolls[i] === value) {
+      uValue = rolls[i]
     }
   }
-  return null
+  return uValue
 }
 
 /**
