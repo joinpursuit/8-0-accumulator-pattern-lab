@@ -24,7 +24,16 @@ function isValid(rolls) {
  * @param {number} value - A specific value to find.
  * @returns {*} - The found value or `null`.
  */
-function findValue(rolls, value) {}
+function findValue(rolls, value) {
+ for (const roll of rolls) {
+  if (rolls.includes(value) == true) {
+    return value;
+  } else {
+    return null; // if "roll[i]" in rolls array contains value, will return true; if not, returns null.
+  }
+ }
+ return null; //returns null if array is empty and for loop can't be executed
+}
 
 /**
  * Returns a new array from the `rolls` array with only values equal to or greater than the `lowest` value.
