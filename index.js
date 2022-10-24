@@ -4,9 +4,8 @@
  * @returns {boolean} Returns `true` if all values in the array are numbers. Otherwise, return `false`.
  */
 function isValid(rolls) {
-  let count = 0
-  
-  //if (rolls.length === 0) return true 
+  let count = 0               //accumulator to add values
+   if (rolls.length === 0) return true 
   // this is to check if rolls is [] but no need because for loop executes and nothing it will automatically return empty []
 
   for(let i = 0; i < rolls.length; i++){
@@ -25,17 +24,20 @@ function isValid(rolls) {
  */
 function findValue(rolls, value) {
   // method 1
-
-  return (rolls.includes(value) ? value : null)
+let flag = null           //accumulator
+  if (rolls.length === 0) // this is to check if rolls is [] but no need because for loop executes and nothing it will automatically return empty []
+      flag = null
+  else if (rolls.includes(value))
+      flag =  value
+  else
+      flag = null
+  
+return flag
 
   // method 2
 
-  // if (rolls.length === 0) // this is to check if rolls is [] but no need because for loop executes and nothing it will automatically return empty []
-  //     return null
-  // else if (rolls.includes(value))
-  //     return value
-  // else
-  //     return null
+ // return (rolls.includes(value) ? value : null)
+  
 }
 
 /**
