@@ -3,7 +3,20 @@
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {boolean} Returns `true` if all values in the array are numbers. Otherwise, return `false`.
  */
-function isValid(rolls) {}
+function isValid(rolls) {
+  for (const roll of rolls) {
+    if (typeof roll === 'number') {
+      return typeof roll === 'number'
+    } else if (rolls.length === 0) {
+      return rolls.length === 0
+    } else {
+      return false; //will return false if either above are false
+    }
+  }
+  return true; // will return true if empty array is given and there is nothing to execute in for loop
+}
+
+
 
 /**
  * Finds a value in an array. If that value is in the array, returns it. Otherwise, returns `null`.
