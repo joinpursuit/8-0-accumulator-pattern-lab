@@ -68,22 +68,34 @@ function filterOutLowValues(rolls, lowest) {
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
-// Explanation of the code below the function...
+// MUCH SIMPLER WAY:
 function getRollCounts(rolls) {
   let result = {};
-  let count = 0;
-  rolls.sort();
-    for (let i = 0; i < rolls.length; i = i + count){
-    count = 1;
-      for (let j = i + 1; j < rolls.length; j++) {
-        if (rolls[i] === rolls[j]) {
-        count++;
-        }
-      }
-      result[rolls[i]] = count;
+  for (let num of rolls){
+    if (result[num]){
+      result[num] += 1
+    } else {
+      result[num] = 1
     }
+  }
   return result;
 }
+// MUCH COMPLICATED WAY: ... (explanation included below)
+// function getRollCounts(rolls) {
+//   let result = {};
+//   let count = 0;
+//   rolls.sort();
+//     for (let i = 0; i < rolls.length; i = i + count){
+//     count = 1;
+//       for (let j = i + 1; j < rolls.length; j++) {
+//         if (rolls[i] === rolls[j]) {
+//         count++;
+//         }
+//       }
+//       result[rolls[i]] = count;
+//     }
+//   return result;
+// }
 /*
 Explanation of the code:
 > "rolls.sort();"
@@ -105,7 +117,6 @@ in the second for loop:
 > after if statement:
 - set key as "rolls[i]"" and the value as "count".
 */
-
 
 // Do not change the code below here.
 module.exports = {
