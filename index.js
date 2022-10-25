@@ -55,7 +55,6 @@ function filterOutLowValues(rolls, lowest) {
  */
 function getRollCounts(rolls) {
   let rollObject = {};
-  let counter = 0;
   for (const roll of rolls) {
     if (rollObject[roll]) {
       rollObject[roll] += 1;
