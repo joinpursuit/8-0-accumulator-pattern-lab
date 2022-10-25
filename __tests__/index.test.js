@@ -96,7 +96,7 @@ describe("filterOutLowValues()", () => {
   });
 });
 
-describe("getRollCounts()", () => {
+describe.only("getRollCounts()", () => {
   test("should return an empty object if no rolls are given", () => {
     const rolls = [];
     const actual = getRollCounts(rolls);
