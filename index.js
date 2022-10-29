@@ -5,6 +5,7 @@
  */
 function isValid(rolls) {
   
+  
   return rolls.every(roll => {
   return typeof roll=== 'number'
 });
@@ -17,15 +18,23 @@ function isValid(rolls) {
  * @returns {*} - The found value or `null`.
  */
 function findValue(rolls, value) {
-  let foundValue =[0]
-  for (let i = 0 ; i < rolls.length; i ++ ){
-    // const value = rolls[i]
-    if (!rolls.includes(value)){
-        return null;
+  let found = null
+  for(i =0 ; i < rolls.length ; i++){
+    if(rolls[i] === value){
+      found = value
     }
-    return value;
   }
-  return foundValue;
+    return found;
+  
+  // let foundValue =[0]
+  // for (let i = 0 ; i < rolls.length; i ++ ){
+  //   // const value = rolls[i]
+  //   if (!rolls.includes(value)){
+  //       return null;
+  //   }
+  //   return value;
+  // }
+  // return foundValue;
 }
 
 /**
@@ -36,13 +45,20 @@ function findValue(rolls, value) {
  */
 function filterOutLowValues(rolls, lowest) {
   let newArray = []
+  if (rolls.length === 0){
+    return []
+  }
   
   for (let i = 0; i <rolls.length; i++){
-    rolls[i] ===lowest
+   if(rolls[i] >=lowest){
+
+   
   
     
+  
+  newArray .push(rolls[i])
+}
   }
-  newArray = rolls.splice(lowest,1)
   return newArray
 
 }
@@ -56,10 +72,14 @@ function getRollCounts(rolls) {
   
 
   let object = {}
-  for (let i = 0 ; i < rolls.length; i++){
-    object[rolls[i]] = (object[rolls[i]] ?? 0)+1
+  for (let element of rolls){
+    object[element] ? object[element] += 1 : object[element] = 1
   }
-  return object;
+  return object
+  // for (let i = 0 ; i < rolls.length; i++){
+  //   object[rolls[i]] = (object[rolls[i]] ?? 0)+1
+  // }
+  // return object;
 }
 
 // Do not change the code below here.
