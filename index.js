@@ -62,15 +62,23 @@ function filterOutLowValues(rolls, lowest) {
  */
 function getRollCounts(rolls) {
   let newObject = {};
-  let counter = 0;
-  rolls.forEach((el) => {
-    if(el === el ) {
-      newObject[counter] = counter
-      counter++
-      newObject[counter] = el
-      console.log(newObject)
+  let counter = 1;
+  let value;
+
+  rolls.forEach((el,i) => {
+    
+    if(el === el || i !== 0 ) {
+      value = el
+      newObject['value'] = counter 
+    } else {
+      if (el === el) {
+        value = el 
+        counter++
+        newObject['value'] = i
+      }
     }
   })
+// console.log(newObject)
   return newObject
 }
 
