@@ -62,7 +62,6 @@ describe("filterOutLowValues()", () => {
     const expected = [];
     expect(actual).toEqual(expected);
   });
-
   test("should filter for values greater than the lowest value", () => {
     const rolls = [2, 4, 2, 5, 6];
     const lowest = 3;
