@@ -1,3 +1,5 @@
+const { TestWatcher } = require("jest");
+
 /**
  * Returns a boolean representing whether or not all values are numbers.
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
@@ -8,16 +10,17 @@ function isValid(rolls) {
   const result = []
   for (let i = 0; i <= rolls.length - 1; i++) {
     rolls.push(i);
-    return true;
+    return false
 
 
-  }
-  return false;
+  } if (rolls.length === 0) { return true } 
+  
+
+  return result
 
 
 }
-//^---1 out of 3 checks,must return 2 different true statement but only passing false statement 
-//BUT when i leave the parameter in, no test pass
+
 
 /**
  * Finds a value in an array. If that value is in the array, returns it. Otherwise, returns `null`.
@@ -26,16 +29,17 @@ function isValid(rolls) {
  * @returns {*} - The found value or `null`.
  */
 function findValue(rolls, value) {
-  const result = []
+  const result = [] 
+  // if (rolls.length <= 1 )  { return `No value found` } 
   for (let i = 0; i <= rolls.length - 1; i++) {
     rolls.push(i)
 
-    return value;
-  }
+    return value 
+  } 
+ 
   return null;
 }
-//^---return value.find(rolls => rolls.value === true) || null
-//2 ot 3 checks, missing return null if the values is not found in the array
+
 /**
  * Returns a new array from the `rolls` array with only values equal to or greater than the `lowest` value.
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
@@ -47,6 +51,10 @@ function filterOutLowValues(rolls, lowest) {
   for (let i = 0; i <= rolls.length - 1; i++) {
     rolls.push(i)
     return lowest;
+  } 
+   {
+    if (rolls.length >= 1) {return greater}
+
   }
   return result;
 }
@@ -58,10 +66,11 @@ function filterOutLowValues(rolls, lowest) {
  */
 function getRollCounts(rolls) {
   const rollsObj = {}
-  return rollsObj; {
+  return rollsObj;
 
-  }
-
+  rolls.forEach(element => {
+    count[element] = (count[element] || 0) + 1;
+  });
 
 
 }
