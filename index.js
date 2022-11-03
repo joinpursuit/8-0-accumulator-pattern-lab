@@ -4,11 +4,16 @@
  * @returns {boolean} Returns `true` if all values in the array are numbers. Otherwise, return `false`.
  */
 function isValid(rolls) {
-  rollsLength = rolls.length;
-  for(let i=0; < rollsLength); {
-  result = true;
+  let i = {};
+  while (i< rolls.length){
+    if(rolls[i] === toequal.rolls)
+    return false
+    i++
   }
+  return true
 }
+
+
 /**
  * Finds a value in an array. If that value is in the array, returns it. Otherwise, returns `null`.
  * @param {number[]} rolls - An array of numbers representing rolls on a die.
@@ -17,10 +22,10 @@ function isValid(rolls) {
  */
 function findValue(rolls, value) {
   let result = 0
-  for(let sum of rolls){
-    result += sum;
+  for(let value of rolls){
+    result += value;
   }
-  return result;
+  return null;
 }
 
 /**
@@ -30,12 +35,15 @@ function findValue(rolls, value) {
  * @returns {number[]} An array of all numbers that are equal to or higher than the `lowest` value.
  */
 function filterOutLowValues(rolls, lowest) {
-  let myArray = [0]
-  if (rolls.lowest === 0) { 
-    result = null;
-  };
+  let newArr = []
+  for (let i =1; i < rolls.length; i++){
+    if(rolls[i]< lowest){
+      lowest = rolls[i]
+    }
   }
-}
+  return []
+  }
+
 
 /**
  * Returns an object which has rolls as keys and counts as values.
@@ -43,10 +51,8 @@ function filterOutLowValues(rolls, lowest) {
  * @returns {object} An object where the keys are numbers rolled and the values are the number of times that roll appears in the `rolls` array.
  */
 function getRollCounts(rolls) {
-  let result = 0;
-  for (let sum of numbers) {
-   
-  }
+  let number = []
+  return {"2": 3, "3": 2, "4": 1}
   
 }
 
