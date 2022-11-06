@@ -83,29 +83,15 @@ function getRollCounts(rolls) {
       newObj[rolls[i]] = 1
       }
      } 
-  //   if((newObj[rolls[i]]){
-  //   //   return newObj
-  //   // } else {
-  //   for(j=0; j<rolls.length; j++)
+ 
 
-    for(let prop in newObj){
-    if(newObj[prop] >= 2){
-      console.log(prop + ": " + newObj[prop])
+    for(let j in newObj){
+    if(newObj[j] >= 2){
+      console.log(j + ": " + newObj[j])
     }
   } return (newObj)
   
-  //   if(typeof(rolls[i]) == "number")
-  //  newObj[rolls[i]] = 2
-  // }
-  // return newObj
 
-// works but we don't know why //
-  // if(newObj[rolls[i]] === undefined){
-  // newObj[rolls[i]] = 1
-  // } else{
-  //  newObj[rolls[i]] += 1
-  // }  
-  // }return (newObj)
 }
 
 
