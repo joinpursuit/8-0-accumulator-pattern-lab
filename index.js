@@ -80,7 +80,7 @@ function getRollCounts(rolls) {
 
 
 //   let rollObject001 = {}   // 1 - 6
-// // { 2: 2, 3: 1, 5: 2 }
+// // { 2: 2, 
 
 //   for( let i = 0; i < rolls.length; i++ ){  // rolls[2] => element => 5 // [ 2, 3, 5, 5, 2 ]
 
